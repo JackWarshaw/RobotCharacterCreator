@@ -10,6 +10,7 @@ public class GenerateDesiredPart : MonoBehaviour
     public Text WantedHead;
     public Text WantedChest;
     public Text WantedLegs;
+    public Image GridParent;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +49,41 @@ public class GenerateDesiredPart : MonoBehaviour
         WantedHead.text = NewParts[0];
         WantedChest.text = NewParts[1];
         WantedLegs.text = NewParts[2];
+
+
+        RollNewParts();
+    }
+
+    void RollNewParts()
+    {
+        Random Rand = new Random();
+
+        /* 
+        string[,] SpriteArray = new string[,]
+        {
+            {"1221","Head"},
+            {"1222", "Chest"},
+            {"1223", "Legs"}
+        };
+        */
+
+        List<string> OnlySpriteString = new List<string>()
+        {
+            "1221","1222","1223"
+        };
+
+
+        Button[] GridChildren = GridParent.GetComponentsInChildren<Button>();
+    
+        foreach (Button Part in GridChildren)
+        {
+            int r = Rand.Next(OnlySpriteString.Count);
+            var randomSprite = Resources.Load<Sprite>("PartPictures\\" + OnlySpriteString[r]);
+            Debug.Log(randomSprite);
+            Part.GetComponent<Image>().sprite = randomSprite;
+        }
+
+
     }
 }
 
