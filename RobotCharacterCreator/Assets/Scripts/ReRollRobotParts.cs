@@ -46,9 +46,10 @@ public class ReRollRobotParts : MonoBehaviour
         }
 
         Button[] GridChildren = GridParent.GetComponentsInChildren<Button>();
-    
+
         foreach (Button Part in GridChildren)
         {
+
             int r = Rand.Next(OnlySpriteString.Count);
             var randomSprite = Resources.Load<Sprite>("PartPictures\\" + OnlySpriteString[r]);
             Part.GetComponent<Image>().sprite = randomSprite;

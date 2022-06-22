@@ -15,7 +15,7 @@ public class GenerateDesiredPart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SubmitButton.onClick.AddListener(NewOrder);
+        // SubmitButton.onClick.AddListener(NewOrder);
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class GenerateDesiredPart : MonoBehaviour
         
     }
 
-    void NewOrder()
+    public void NewOrder()
     {
         string[,] PartArray = new string[,] 
         {
@@ -67,19 +67,23 @@ public class GenerateDesiredPart : MonoBehaviour
         };
         */
 
-        List<string> OnlySpriteString = new List<string>()
-        {
-            "1221","1222","1223"
+        List<string> OnlySpriteString = new List<string>() 
+        { 
+            "1121",
+            "1122",
+            "1123" 
         };
 
+       
 
         Button[] GridChildren = GridParent.GetComponentsInChildren<Button>();
-    
+
         foreach (Button Part in GridChildren)
         {
+
             int r = Rand.Next(OnlySpriteString.Count);
-            var randomSprite = Resources.Load<Sprite>("PartPictures\\" + OnlySpriteString[r]);
-            Debug.Log(randomSprite);
+            string hold = "PartPictures\\" + OnlySpriteString[r];
+            var randomSprite = Resources.Load<Sprite>(hold);
             Part.GetComponent<Image>().sprite = randomSprite;
         }
 
