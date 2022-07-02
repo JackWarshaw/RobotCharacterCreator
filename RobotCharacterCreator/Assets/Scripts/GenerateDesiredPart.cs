@@ -4,18 +4,21 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = System.Random;
 
+using static SpriteDictClass;
+//using static ReRollParts;
+
 public class GenerateDesiredPart : MonoBehaviour
 {
-    public Button SubmitButton;
     public Text WantedHead;
     public Text WantedChest;
     public Text WantedLegs;
     public Image GridParent;
 
+
     // Start is called before the first frame update
     void Start()
     {
-        // SubmitButton.onClick.AddListener(NewOrder);
+    
     }
 
     // Update is called once per frame
@@ -54,40 +57,24 @@ public class GenerateDesiredPart : MonoBehaviour
         RollNewParts();
     }
 
-    void RollNewParts()
+
+
+    
+    public void RollNewParts()
     {
         Random Rand = new Random();
-
-        /* 
-        string[,] SpriteArray = new string[,]
-        {
-            {"1221","Head"},
-            {"1222", "Chest"},
-            {"1223", "Legs"}
-        };
-        */
-
-        List<string> OnlySpriteString = new List<string>() 
-        { 
-            "1121",
-            "1122",
-            "1123" 
-        };
-
-       
 
         Button[] GridChildren = GridParent.GetComponentsInChildren<Button>();
 
         foreach (Button Part in GridChildren)
         {
 
-            int r = Rand.Next(OnlySpriteString.Count);
-            string hold = "PartPictures\\" + OnlySpriteString[r];
+            int r = Rand.Next(SpriteDictKeys.Count);
+            string hold = "PartPictures\\" + SpriteDictKeys[r];
             var randomSprite = Resources.Load<Sprite>(hold);
             Part.GetComponent<Image>().sprite = randomSprite;
         }
-
-
     }
+    
 }
 

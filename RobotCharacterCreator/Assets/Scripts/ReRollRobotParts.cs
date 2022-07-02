@@ -44,7 +44,7 @@ public class ReRollRobotParts : MonoBehaviour
 
             OnlySpriteString.Add(SpriteNameAndExtension[0]);
         }
-
+        
         Button[] GridChildren = GridParent.GetComponentsInChildren<Button>();
 
         foreach (Button Part in GridChildren)
