@@ -25,6 +25,8 @@ public class DisplayPart : MonoBehaviour
 
     public void ApplyPart()
     {
+        // will eventually have to update a list / array that stores the order info
+
         Sprite DesiredSprite = this.GetComponent<Image>().sprite;
         string ImageName = DesiredSprite.name;
         string PartType = SpriteDict[ImageName][0];

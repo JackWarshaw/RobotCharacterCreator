@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpriteDictClass : MonoBehaviour
 {
-
+    // Part dictionary id's will be set by this metric: TBD
     
     public static Dictionary<string,string[]> SpriteDict = new Dictionary<string,string[]>()
     {

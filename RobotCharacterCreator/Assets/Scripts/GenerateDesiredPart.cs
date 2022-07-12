@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = System.Random;
@@ -14,11 +15,12 @@ public class GenerateDesiredPart : MonoBehaviour
     public Text WantedLegs;
     public Image GridParent;
 
+    private List<string> prevOrder = new List<string> { };
 
     // Start is called before the first frame update
     void Start()
     {
-    
+        NewOrder();
     }
 
     // Update is called once per frame
@@ -27,36 +29,37 @@ public class GenerateDesiredPart : MonoBehaviour
         
     }
 
-    public void NewOrder()
+
+    public void NewOrder() 
     {
-        string[,] PartArray = new string[,] 
-        {
-            {"Small", "Medium", "Large"},
-            {"Green", "Red", "Blue"},
-            {"Polka-dotted", "Striped", "Starred"},    
-        };
-
-        string[] NewParts = new string[3];
+        List<string> AllOrderComponents = new List<string> { "Strong", "Weak", "Chunky", "Smooth", "Slender", "Weird", "Industrial", "Bright", "Simple", "Complex" };
         
+        List<string> OrderComponents = AllOrderComponents.Except(prevOrder).ToList();
+
+        prevOrder = new List<string>{ };
+
+        string[] newOrder = new string[3];
+
         Random Rand = new Random();
-        for (int i = 0; i < 3; i++) // 3 is the number of parts to generate
-        {  
-            
-            for (int j = 0; j < PartArray.GetLength(0); j++)
-            {
-                NewParts[i] = NewParts[i] + PartArray[j,Rand.Next(0,PartArray.GetLength(0))] + ' ';
-            }
-           
-        }
-        
-        WantedHead.text = NewParts[0];
-        WantedChest.text = NewParts[1];
-        WantedLegs.text = NewParts[2];
 
+        for (int i = 0; i < 3; i++) 
+        {
+            int randNum = OrderComponents.Count;
+
+            newOrder[i] = OrderComponents[Rand.Next(0, randNum)];
+
+            OrderComponents.Remove(newOrder[i]);
+
+            prevOrder.Add(newOrder[i]);
+        }
+
+        WantedHead.text = newOrder[0];
+        WantedChest.text = newOrder[1];
+        WantedLegs.text = newOrder[2];
 
         RollNewParts();
-    }
 
+    }
 
 
     
