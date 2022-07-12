@@ -10,12 +10,11 @@ public class DisplayPart : MonoBehaviour
     public Image HeadDisplay;
     public Image ChestDisplay;
     public Image LegsDisplay;
-    public Button SelectedPart;
 
     // Start is called before the first frame update
     void Start()
     {
-    
+        
     }
 
     // Update is called once per frame
@@ -26,7 +25,7 @@ public class DisplayPart : MonoBehaviour
 
     public void ApplyPart()
     {
-        Sprite DesiredSprite = SelectedPart.GetComponent<Image>().sprite;
+        Sprite DesiredSprite = this.GetComponent<Image>().sprite;
         string ImageName = DesiredSprite.name;
         string PartType = SpriteDict[ImageName][0];
         
