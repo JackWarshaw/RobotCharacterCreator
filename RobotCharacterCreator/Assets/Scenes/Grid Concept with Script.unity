@@ -640,7 +640,6 @@ MonoBehaviour:
   WantedHead: {fileID: 46189154}
   WantedChest: {fileID: 1437748793}
   WantedLegs: {fileID: 846882846}
-  GridParent: {fileID: 1871912067}
 --- !u!1 &475800782
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,7 +730,7 @@ GameObject:
   - component: {fileID: 522760395}
   - component: {fileID: 522760394}
   m_Layer: 5
-  m_Name: Sort by Shape
+  m_Name: Heads
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -909,7 +908,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Color
+  m_Text: Chests
 --- !u!222 &607131297
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -988,7 +987,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Size
+  m_Text: Legs
 --- !u!222 &669274849
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1010,7 +1009,7 @@ GameObject:
   - component: {fileID: 728366913}
   - component: {fileID: 728366912}
   m_Layer: 5
-  m_Name: Sort by Size
+  m_Name: Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1911,7 +1910,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -214.20007, y: -8.932678}
+  m_AnchoredPosition: {x: -214.20004, y: -8.932678}
   m_SizeDelta: {x: -517.4653, y: -28.389}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1112950203
@@ -2678,7 +2677,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Shape
+  m_Text: Heads
 --- !u!222 &1600474604
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2700,7 +2699,7 @@ GameObject:
   - component: {fileID: 1686859571}
   - component: {fileID: 1686859570}
   m_Layer: 5
-  m_Name: Sort by Color
+  m_Name: Chests
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4310,7 +4309,6 @@ MonoBehaviour:
   WantedHead: {fileID: 46189154}
   WantedChest: {fileID: 1437748793}
   WantedLegs: {fileID: 846882846}
-  GridParent: {fileID: 1871912067}
 --- !u!114 &2117714054
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 993347acb3720ed4184a00d872956d88, type: 3}
-  m_Name: NorthstarHead1
+  m_Name: NorthStarHead1
   m_EditorClassIdentifier: 
   id: 0
   name: The NorthStar Computator (Classic)
-  manufacturer: Northstar
+  manufacturer: NorthStar
   type: Head
   descriptors:
   - Industrial

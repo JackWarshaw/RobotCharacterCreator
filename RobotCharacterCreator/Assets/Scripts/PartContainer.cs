@@ -7,7 +7,7 @@ using UnityEngine;
 public class PartContainer : ScriptableObject
 {
     [SerializeField] int id;
-    [SerializeField] string name;
+    [SerializeField] string partName;
     [SerializeField] string manufacturer;
     [SerializeField] string type;
     [SerializeField] string[] descriptors;
@@ -15,7 +15,7 @@ public class PartContainer : ScriptableObject
 
     public int ID { get { return id; } set { id = value; } }
 
-    public string Name { get { return name; } set { name = value; } }
+    public string PartName { get { return partName; } set { partName = value; } }
 
     public string Manufacturer { get { return manufacturer; } set { manufacturer = value; } }
 
