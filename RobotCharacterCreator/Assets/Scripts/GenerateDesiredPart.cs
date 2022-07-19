@@ -6,14 +6,12 @@ using UnityEngine.UI;
 using Random = System.Random;
 
 using static SpriteDictClass;
-//using static ReRollParts;
 
 public class GenerateDesiredPart : MonoBehaviour
 {
     public Text WantedHead;
     public Text WantedChest;
     public Text WantedLegs;
-    public Image GridParent;
 
     private List<string> prevOrder = new List<string> { };
 
@@ -57,26 +55,8 @@ public class GenerateDesiredPart : MonoBehaviour
         WantedChest.text = newOrder[1];
         WantedLegs.text = newOrder[2];
 
-        RollNewParts();
-
-    }
 
 
-    
-    public void RollNewParts()
-    {
-        Random Rand = new Random();
-
-        Button[] GridChildren = GridParent.GetComponentsInChildren<Button>();
-
-        foreach (Button Part in GridChildren)
-        {
-
-            int r = Rand.Next(SpriteDictKeys.Count);
-            string hold = "PartPictures\\" + SpriteDictKeys[r];
-            var randomSprite = Resources.Load<Sprite>(hold);
-            Part.GetComponent<Image>().sprite = randomSprite;
-        }
     }
     
 }
