@@ -7,7 +7,7 @@ TextureImporter:
     second: NorthstarHead1
   - first:
       213: -6834281611399035247
-    second: NorthstarChest2
+    second: NorthstarChest1
   - first:
       213: 3570428517388653201
     second: NorthstarLegs1
@@ -37,7 +37,7 @@ TextureImporter:
     second: VitruvianChest2
   - first:
       213: -7747028157941416435
-    second: VitruvianLegs2
+    second: VitruvianChest2
   - first:
       213: 5202997084672303806
     second: RobCoHead
@@ -52,7 +52,7 @@ TextureImporter:
     second: NorthstarHead2
   - first:
       213: 5369703441832013254
-    second: NorthstarChest
+    second: NorthstarChest2
   - first:
       213: 4085653295699909475
     second: NorthstarLegs2
@@ -184,7 +184,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NorthstarChest2
+      name: NorthstarChest1
       rect:
         serializedVersion: 2
         x: 512
@@ -373,7 +373,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VitruvianChest2
+      name: VitruvianLegs2
       rect:
         serializedVersion: 2
         x: 1024
@@ -394,7 +394,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VitruvianLegs2
+      name: VitruvianChest2
       rect:
         serializedVersion: 2
         x: 1536
@@ -499,7 +499,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NorthstarChest
+      name: NorthstarChest2
       rect:
         serializedVersion: 2
         x: 0

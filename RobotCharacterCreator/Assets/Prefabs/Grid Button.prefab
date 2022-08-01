@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 4425281771383689491}
   - component: {fileID: 4557783689794556959}
   - component: {fileID: 5966760699954625789}
-  - component: {fileID: 8643890936411209999}
+  - component: {fileID: -2828774130546502490}
   m_Layer: 5
   m_Name: Grid Button
-  m_TagString: Untagged
+  m_TagString: PartButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,8 +121,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8643890936411209999}
-        m_TargetAssemblyTypeName: DisplayPart, Assembly-CSharp
+      - m_Target: {fileID: -2828774130546502490}
+        m_TargetAssemblyTypeName: FillFromPrefab, Assembly-CSharp
         m_MethodName: ApplyPart
         m_Mode: 1
         m_Arguments:
@@ -133,7 +133,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8643890936411209999
+--- !u!114 &-2828774130546502490
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,10 +142,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2032359445444968581}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd3a9d7bfa9f9e94da00aadee433a2c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 709dbf74e82d7e44c84af33752a692ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RobotParts:
+    Head: {fileID: 0}
+    Chest: {fileID: 0}
+    Legs: {fileID: 0}
   HeadDisplay: {fileID: 0}
   ChestDisplay: {fileID: 0}
   LegsDisplay: {fileID: 0}
-  SelectedPart: {fileID: 5966760699954625789}

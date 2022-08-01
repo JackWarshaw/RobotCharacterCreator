@@ -289,6 +289,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1871912066}
     m_Modifications:
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: RobotPart
+      value: 
+      objectReference: {fileID: 11400000, guid: 5e01bb3bca1ba6446a41b5f9551e3084, type: 2}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: HeadDisplay
+      value: 
+      objectReference: {fileID: 47449459}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: LegsDisplay
+      value: 
+      objectReference: {fileID: 2006209450}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: ChestDisplay
+      value: 
+      objectReference: {fileID: 1344753481}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: RobotParts.Head
+      value: 
+      objectReference: {fileID: 11400000, guid: 5e01bb3bca1ba6446a41b5f9551e3084, type: 2}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: RobotParts.Legs
+      value: 
+      objectReference: {fileID: 11400000, guid: 8db32764a91a30c4699e61c09d3cc8e4, type: 2}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: RobotParts.Chest
+      value: 
+      objectReference: {fileID: 11400000, guid: 2fc00bc0322e8864eb5bae0c4e0a3c67, type: 2}
     - target: {fileID: 2032359445444968581, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
       propertyPath: m_Name
       value: Grid Button 00 (2)
@@ -393,18 +421,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8643890936411209999, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
-      propertyPath: HeadDisplay
-      value: 
-      objectReference: {fileID: 47449459}
-    - target: {fileID: 8643890936411209999, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
-      propertyPath: LegsDisplay
-      value: 
-      objectReference: {fileID: 2006209450}
-    - target: {fileID: 8643890936411209999, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
-      propertyPath: ChestDisplay
-      value: 
-      objectReference: {fileID: 1344753481}
     - target: {fileID: 8691159291811568482, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -729,6 +745,7 @@ GameObject:
   - component: {fileID: 522760396}
   - component: {fileID: 522760395}
   - component: {fileID: 522760394}
+  - component: {fileID: 522760397}
   m_Layer: 5
   m_Name: Heads
   m_TagString: Untagged
@@ -799,7 +816,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 522760395}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 522760397}
+        m_TargetAssemblyTypeName: PartTypeSwitch, Assembly-CSharp
+        m_MethodName: SwitchTypes
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Head
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &522760395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -838,6 +867,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 522760392}
   m_CullTransparentMesh: 1
+--- !u!114 &522760397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522760392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1c691c815d1143448848c02e8b221fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridButtons: {fileID: 1871912066}
 --- !u!1 &607131294
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,6 +1050,7 @@ GameObject:
   - component: {fileID: 728366914}
   - component: {fileID: 728366913}
   - component: {fileID: 728366912}
+  - component: {fileID: 728366915}
   m_Layer: 5
   m_Name: Legs
   m_TagString: Untagged
@@ -1078,7 +1121,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 728366913}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 728366915}
+        m_TargetAssemblyTypeName: PartTypeSwitch, Assembly-CSharp
+        m_MethodName: SwitchTypes
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Legs
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &728366913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1117,6 +1172,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 728366910}
   m_CullTransparentMesh: 1
+--- !u!114 &728366915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728366910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1c691c815d1143448848c02e8b221fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridButtons: {fileID: 1871912066}
 --- !u!1001 &747029639
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1124,6 +1192,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1871912066}
     m_Modifications:
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: RobotPart
+      value: 
+      objectReference: {fileID: 11400000, guid: 4d3ef33dbbe0ba945bdc9f244ebb3219, type: 2}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: HeadDisplay
+      value: 
+      objectReference: {fileID: 47449459}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: LegsDisplay
+      value: 
+      objectReference: {fileID: 2006209450}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: ChestDisplay
+      value: 
+      objectReference: {fileID: 1344753481}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: RobotParts.Head
+      value: 
+      objectReference: {fileID: 11400000, guid: 4d3ef33dbbe0ba945bdc9f244ebb3219, type: 2}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: RobotParts.Legs
+      value: 
+      objectReference: {fileID: 11400000, guid: cdfc5678ccff2634793861fc230d8b48, type: 2}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: RobotParts.Chest
+      value: 
+      objectReference: {fileID: 11400000, guid: ea08e0a92bb213d4f8b99644f6777e22, type: 2}
     - target: {fileID: 2032359445444968581, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
       propertyPath: m_Name
       value: Grid Button 00 (3)
@@ -1228,18 +1324,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8643890936411209999, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
-      propertyPath: HeadDisplay
-      value: 
-      objectReference: {fileID: 47449459}
-    - target: {fileID: 8643890936411209999, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
-      propertyPath: LegsDisplay
-      value: 
-      objectReference: {fileID: 2006209450}
-    - target: {fileID: 8643890936411209999, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
-      propertyPath: ChestDisplay
-      value: 
-      objectReference: {fileID: 1344753481}
     - target: {fileID: 8691159291811568482, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1356,9 +1440,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1871912066}
     m_Modifications:
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: HeadDisplay
+      value: 
+      objectReference: {fileID: 47449459}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: LegsDisplay
+      value: 
+      objectReference: {fileID: 2006209450}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: ChestDisplay
+      value: 
+      objectReference: {fileID: 1344753481}
     - target: {fileID: 2032359445444968581, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
       propertyPath: m_Name
       value: Grid Button 00 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032359445444968581, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6089589244487133171, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
       propertyPath: HeadDisplay
@@ -1460,18 +1564,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8643890936411209999, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
-      propertyPath: HeadDisplay
-      value: 
-      objectReference: {fileID: 47449459}
-    - target: {fileID: 8643890936411209999, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
-      propertyPath: LegsDisplay
-      value: 
-      objectReference: {fileID: 2006209450}
-    - target: {fileID: 8643890936411209999, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
-      propertyPath: ChestDisplay
-      value: 
-      objectReference: {fileID: 1344753481}
     - target: {fileID: 8691159291811568482, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1662,6 +1754,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grid Button 00 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5966760699954625789, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1310698853}
+    - target: {fileID: 5966760699954625789, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ApplyPart
+      objectReference: {fileID: 0}
+    - target: {fileID: 5966760699954625789, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FillFromPrefab, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 6089589244487133171, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
       propertyPath: HeadDisplay
       value: 
@@ -1762,18 +1866,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8643890936411209999, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
-      propertyPath: HeadDisplay
-      value: 
-      objectReference: {fileID: 47449459}
-    - target: {fileID: 8643890936411209999, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
-      propertyPath: LegsDisplay
-      value: 
-      objectReference: {fileID: 2006209450}
-    - target: {fileID: 8643890936411209999, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
-      propertyPath: ChestDisplay
-      value: 
-      objectReference: {fileID: 1344753481}
     - target: {fileID: 8691159291811568482, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1802,7 +1894,9 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
+    - {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
 --- !u!1 &1056525921
 GameObject:
@@ -1910,7 +2004,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -214.20004, y: -8.932678}
+  m_AnchoredPosition: {x: -214.20007, y: -8.932678}
   m_SizeDelta: {x: -517.4653, y: -28.389}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1112950203
@@ -2066,6 +2160,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1871912066}
     m_Modifications:
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: RobotPart
+      value: 
+      objectReference: {fileID: 11400000, guid: 230702075f6bd644295b0d6a8d61085f, type: 2}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: HeadDisplay
+      value: 
+      objectReference: {fileID: 47449459}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: LegsDisplay
+      value: 
+      objectReference: {fileID: 2006209450}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: ChestDisplay
+      value: 
+      objectReference: {fileID: 1344753481}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: RobotParts.Head
+      value: 
+      objectReference: {fileID: 11400000, guid: 230702075f6bd644295b0d6a8d61085f, type: 2}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: RobotParts.Legs
+      value: 
+      objectReference: {fileID: 11400000, guid: 44dafaf8d1ab41243aeb4685c8319407, type: 2}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: RobotParts.Chest
+      value: 
+      objectReference: {fileID: 11400000, guid: 74ae40372103bd146ab6740389a1215f, type: 2}
     - target: {fileID: 2032359445444968581, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
       propertyPath: m_Name
       value: Grid Button 00 (5)
@@ -2170,18 +2292,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8643890936411209999, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
-      propertyPath: HeadDisplay
-      value: 
-      objectReference: {fileID: 47449459}
-    - target: {fileID: 8643890936411209999, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
-      propertyPath: LegsDisplay
-      value: 
-      objectReference: {fileID: 2006209450}
-    - target: {fileID: 8643890936411209999, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
-      propertyPath: ChestDisplay
-      value: 
-      objectReference: {fileID: 1344753481}
     - target: {fileID: 8691159291811568482, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -2212,6 +2322,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+--- !u!1 &1310698852 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2032359445444968581, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+  m_PrefabInstance: {fileID: 985165669}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1310698853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310698852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 709dbf74e82d7e44c84af33752a692ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RobotParts:
+    Head: {fileID: 11400000, guid: 9bb7a5b8210dfb8458a572c49be47293, type: 2}
+    Chest: {fileID: 11400000, guid: 7f89ab85f6c50ca458c544062727e31c, type: 2}
+    Legs: {fileID: 11400000, guid: 84c73afe4cf82d447889a350a7b1e800, type: 2}
+  HeadDisplay: {fileID: 47449459}
+  ChestDisplay: {fileID: 1344753481}
+  LegsDisplay: {fileID: 2006209450}
 --- !u!1 &1344753479
 GameObject:
   m_ObjectHideFlags: 0
@@ -2698,6 +2832,7 @@ GameObject:
   - component: {fileID: 1686859572}
   - component: {fileID: 1686859571}
   - component: {fileID: 1686859570}
+  - component: {fileID: 1686859573}
   m_Layer: 5
   m_Name: Chests
   m_TagString: Untagged
@@ -2768,7 +2903,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1686859571}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1686859573}
+        m_TargetAssemblyTypeName: PartTypeSwitch, Assembly-CSharp
+        m_MethodName: SwitchTypes
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Chest
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1686859571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2807,6 +2954,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686859568}
   m_CullTransparentMesh: 1
+--- !u!114 &1686859573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686859568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1c691c815d1143448848c02e8b221fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridButtons: {fileID: 1871912066}
 --- !u!1 &1745461065
 GameObject:
   m_ObjectHideFlags: 0
@@ -2978,9 +3138,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1871912066}
     m_Modifications:
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: HeadDisplay
+      value: 
+      objectReference: {fileID: 47449459}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: LegsDisplay
+      value: 
+      objectReference: {fileID: 2006209450}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: ChestDisplay
+      value: 
+      objectReference: {fileID: 1344753481}
     - target: {fileID: 2032359445444968581, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
       propertyPath: m_Name
       value: Grid Button 00 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032359445444968581, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6089589244487133171, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
       propertyPath: HeadDisplay
@@ -3082,18 +3262,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8643890936411209999, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
-      propertyPath: HeadDisplay
-      value: 
-      objectReference: {fileID: 47449459}
-    - target: {fileID: 8643890936411209999, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
-      propertyPath: LegsDisplay
-      value: 
-      objectReference: {fileID: 2006209450}
-    - target: {fileID: 8643890936411209999, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
-      propertyPath: ChestDisplay
-      value: 
-      objectReference: {fileID: 1344753481}
     - target: {fileID: 8691159291811568482, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -3463,9 +3631,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1871912066}
     m_Modifications:
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: HeadDisplay
+      value: 
+      objectReference: {fileID: 47449459}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: LegsDisplay
+      value: 
+      objectReference: {fileID: 2006209450}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: ChestDisplay
+      value: 
+      objectReference: {fileID: 1344753481}
     - target: {fileID: 2032359445444968581, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
       propertyPath: m_Name
       value: Grid Button 00 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032359445444968581, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6089589244487133171, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
       propertyPath: HeadDisplay
@@ -3567,18 +3755,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8643890936411209999, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
-      propertyPath: HeadDisplay
-      value: 
-      objectReference: {fileID: 47449459}
-    - target: {fileID: 8643890936411209999, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
-      propertyPath: LegsDisplay
-      value: 
-      objectReference: {fileID: 2006209450}
-    - target: {fileID: 8643890936411209999, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
-      propertyPath: ChestDisplay
-      value: 
-      objectReference: {fileID: 1344753481}
     - target: {fileID: 8691159291811568482, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -3695,6 +3871,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1871912066}
     m_Modifications:
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: RobotPart
+      value: 
+      objectReference: {fileID: 11400000, guid: af8f9a2a5ad02174e9ad1faa79bb8b14, type: 2}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: HeadDisplay
+      value: 
+      objectReference: {fileID: 47449459}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: LegsDisplay
+      value: 
+      objectReference: {fileID: 2006209450}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: ChestDisplay
+      value: 
+      objectReference: {fileID: 1344753481}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: RobotParts.Head
+      value: 
+      objectReference: {fileID: 11400000, guid: af8f9a2a5ad02174e9ad1faa79bb8b14, type: 2}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: RobotParts.Legs
+      value: 
+      objectReference: {fileID: 11400000, guid: adcad4e8661a0d54bb5baa29456f3a72, type: 2}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: RobotParts.Chest
+      value: 
+      objectReference: {fileID: 11400000, guid: c43054af102e0a849a44c2259bc77e6b, type: 2}
     - target: {fileID: 2032359445444968581, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
       propertyPath: m_Name
       value: Grid Button 00 (4)
@@ -3799,18 +4003,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8643890936411209999, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
-      propertyPath: HeadDisplay
-      value: 
-      objectReference: {fileID: 47449459}
-    - target: {fileID: 8643890936411209999, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
-      propertyPath: LegsDisplay
-      value: 
-      objectReference: {fileID: 2006209450}
-    - target: {fileID: 8643890936411209999, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
-      propertyPath: ChestDisplay
-      value: 
-      objectReference: {fileID: 1344753481}
     - target: {fileID: 8691159291811568482, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -4244,18 +4436,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2117714054}
-        m_TargetAssemblyTypeName: ReRollParts, Assembly-CSharp
-        m_MethodName: RollNewParts
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2117714051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4329,6 +4509,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1871912066}
     m_Modifications:
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: RobotPart
+      value: 
+      objectReference: {fileID: 11400000, guid: e212fd5644e4db143a2253e058de3c8c, type: 2}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: HeadDisplay
+      value: 
+      objectReference: {fileID: 47449459}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: LegsDisplay
+      value: 
+      objectReference: {fileID: 2006209450}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: ChestDisplay
+      value: 
+      objectReference: {fileID: 1344753481}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: RobotParts.Head
+      value: 
+      objectReference: {fileID: 11400000, guid: e212fd5644e4db143a2253e058de3c8c, type: 2}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: RobotParts.Legs
+      value: 
+      objectReference: {fileID: 11400000, guid: 40b41c1bb93b094479da3935476f9467, type: 2}
+    - target: {fileID: -2828774130546502490, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
+      propertyPath: RobotParts.Chest
+      value: 
+      objectReference: {fileID: 11400000, guid: f77ce9ad64b38084c87a9cbe6cf6578e, type: 2}
     - target: {fileID: 2032359445444968581, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
       propertyPath: m_Name
       value: Grid Button 00
@@ -4433,18 +4641,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8643890936411209999, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
-      propertyPath: HeadDisplay
-      value: 
-      objectReference: {fileID: 47449459}
-    - target: {fileID: 8643890936411209999, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
-      propertyPath: LegsDisplay
-      value: 
-      objectReference: {fileID: 2006209450}
-    - target: {fileID: 8643890936411209999, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
-      propertyPath: ChestDisplay
-      value: 
-      objectReference: {fileID: 1344753481}
     - target: {fileID: 8691159291811568482, guid: b36d1e8828036b2468bc3843d1e6dea1, type: 3}
       propertyPath: m_RootOrder
       value: 4
